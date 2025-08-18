@@ -49,7 +49,7 @@ interface Environment
     /**
     * @return mixed $depends on vender
     */
-    public function show(?bool $loop=null, ?int $delay=null) : mixed;
+    public function show(?string $path=null,?bool $loop=null, ?int $delay=null) : mixed;
 
     /**
     *

@@ -5,6 +5,6 @@ use Interop\Polite\Math\Matrix\NDArray;
 
 interface Space
 {
-    public function sample() : NDArray;
-    public function contains(NDArray $x, ?bool $throw=null, ?string $type=null) : bool;
+    public function sample() : NDArray|array;
+    public function contains(NDArray|array $x, ?bool $throw=null, ?string $type=null) : bool;
 }
