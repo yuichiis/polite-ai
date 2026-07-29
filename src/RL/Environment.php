@@ -39,7 +39,7 @@ interface Environment
     /**
     * @return array{NDArray $observation, array<string,mixed> $info}
     **/
-    public function reset() : array;
+    //public function reset(?int $seed=null) : array;
 
     /**
     * @return mixed $depends on vender
@@ -55,12 +55,6 @@ interface Environment
     *
     */
     public function close() : void;
-
-    /**
-    * @param int $seed
-    * @return array<int> $seeds
-    */
-    public function seed(?int $seed=null) : array;
 
     /**
     *
