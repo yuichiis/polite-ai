@@ -12,6 +12,7 @@ jobs:
       fail-fast: true
       matrix:
         php: ['8.0','8.4','8.5']
+        os: ubuntu-latest
   
     name: PHP ${{ matrix.php }}
         
@@ -20,7 +21,6 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
-          coverage: none
         env:
           fail-fast: true
 
