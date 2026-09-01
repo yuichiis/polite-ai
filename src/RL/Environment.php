@@ -37,9 +37,11 @@ interface Environment
     public function step(mixed $action) : array;
 
     /**
-    * @return array{NDArray $observation, array<string,mixed> $info}
+    * return array{NDArray $observation, array<string,mixed> $info}
+    *
+    * @return array{NDArray, array<string,mixed>}
     **/
-    //public function reset(?int $seed=null) : array;
+    public function reset(?int $seed=null) : array;
 
     /**
     * @return mixed $depends on vender
@@ -70,12 +72,4 @@ interface Environment
     *
     */
     public function exit(?Throwable $e=null) : bool;
-
-    //
-    // public function observationSpace() : ?Space;
-    //
-
-    //
-    // public function actionSpace() : ?Space
-    //
 }

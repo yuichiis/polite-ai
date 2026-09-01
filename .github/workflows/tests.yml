@@ -1,0 +1,31 @@
+name: tests
+
+on: 
+  push:
+      branches: [ main, master ]
+
+jobs:
+  tests:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: true
+      matrix:
+        php: ['8.0','8.4','8.5']
+  
+    name: PHP ${{ matrix.php }}
+        
+    steps:
+      - name: Setup PHP ${{ matrix.php }}
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+        env:
+          fail-fast: true
+
+      - name: Checkout codes
+        uses: "actions/checkout@v4"
+
+      - name: PHP Syntax Check
+        run: find src -type f -name '*.php' -exec php -l {} \;
